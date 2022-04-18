@@ -1,4 +1,3 @@
-import 'dotenv/config' 
 import express from 'express';
 import { routerProducto, routerCarrito } from './routes/index.js';
 
@@ -11,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/productos', routerProducto);
 app.use('/api/carrito', routerCarrito);
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const server = app.listen(PORT, () => {
     console.log(`Server is running on port: ${server.address().port}`);
