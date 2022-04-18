@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/productos', routerProducto);
 app.use('/api/carrito', routerCarrito);
 
-const PORT = 8080;
+port = process.env.PORT || 80
 
 const server = app.listen(PORT, () => {
     console.log(`Server is running on port: ${server.address().port}`);
